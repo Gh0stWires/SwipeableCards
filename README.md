@@ -28,7 +28,7 @@ allprojects {
 Download via Gradle:
 ```
 dependencies {
-  compile 'com.github.nihad92:SwipeableCards:{latestvesion}'
+  implementation 'com.github.Gh0stWires:SwipeableCards-Right-Only-:1.1.1'
 }
 ```
  
