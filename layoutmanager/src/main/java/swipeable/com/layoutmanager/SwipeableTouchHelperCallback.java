@@ -31,7 +31,7 @@ public class SwipeableTouchHelperCallback extends ItemTouchHelper.Callback {
   }
 
   public int getAllowedSwipeDirectionsMovementFlags() {
-    return ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+    return ItemTouchHelper.RIGHT;
   }
 
   public int getAllowedSwipeDirectionsMovementFlags(RecyclerView.ViewHolder viewHolder) {
@@ -43,7 +43,7 @@ public class SwipeableTouchHelperCallback extends ItemTouchHelper.Callback {
   }
 
   public int getAllowedDirectionsMovementFlags() {
-    return ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT | ItemTouchHelper.UP | ItemTouchHelper.DOWN;
+    return ItemTouchHelper.RIGHT;
   }
 
   @Override
@@ -64,20 +64,9 @@ public class SwipeableTouchHelperCallback extends ItemTouchHelper.Callback {
 
   @Override public final void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
     int allowedSwipeDirections = getAllowedSwipeDirectionsMovementFlags(viewHolder);
-    if (direction == ItemTouchHelper.LEFT && (allowedSwipeDirections & ItemTouchHelper.LEFT) != 0) {
-      onItemSwiped.onItemSwipedLeft();
-      onItemSwiped.onItemSwiped();
-    } else if (direction == ItemTouchHelper.RIGHT
+    if (direction == ItemTouchHelper.RIGHT
         && (allowedSwipeDirections & ItemTouchHelper.RIGHT) != 0) {
       onItemSwiped.onItemSwipedRight();
-      onItemSwiped.onItemSwiped();
-    } else if (direction == ItemTouchHelper.UP
-        && (allowedSwipeDirections & ItemTouchHelper.UP) != 0) {
-      onItemSwiped.onItemSwipedUp();
-      onItemSwiped.onItemSwiped();
-    } else if (direction == ItemTouchHelper.DOWN
-        && (allowedSwipeDirections & ItemTouchHelper.DOWN) != 0) {
-      onItemSwiped.onItemSwipedDown();
       onItemSwiped.onItemSwiped();
     }
     viewHolder.itemView.invalidate();
