@@ -1,5 +1,7 @@
 # SwipeableCards Right Swaipe only
 
+[![](https://jitpack.io/v/Gh0stWires/SwipeableCards-Right-Only-.svg)](https://jitpack.io/#Gh0stWires/SwipeableCards-Right-Only-)
+
 Library for creating Tinder-like swipe cards effect using RecyclerView
 
 ![Demo gif](https://i.imgur.com/yg0F8V3.gif)
